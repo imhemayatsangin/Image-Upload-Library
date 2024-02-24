@@ -5,5 +5,5 @@ A simple and elegant Image upload library with click, drag &amp; drop and Previe
 
 [<img src="https://github.com/imhemayatsangin/Image-Upload-Library/blob/main/preview.jpg" 
       alt="preview" 
-      width="400" 
-      height="213"/>](https://imhemayatsangin.github.io/Image-Upload-Library/) <br>
+      width="300" 
+      height="160"/>](https://imhemayatsangin.github.io/Image-Upload-Library/) <br>
