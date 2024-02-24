@@ -106,3 +106,28 @@ Instagram: @hemuu404
 #image-upload.no-image button {
   display: none;
 }
+
+/* adding scan laser effect */
+#scan-beam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #d70b0b; /* you can change the color here*/
+  animation: scan 2s ease-in-out infinite;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes scan {
+  0% {
+    top: 0;
+  }
+  50% {
+    top: 100%;
+  }
+  100% {
+    top: 0;
+  }
+
+}

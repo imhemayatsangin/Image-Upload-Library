@@ -60,20 +60,6 @@ function toggleLabel() {
   label.classList.toggle('hidden');
 }
 
-// Remove this line:
-// label.classList.add('hidden');
-
-// Add these lines:
-// const resetButton = document.createElement('button');
-// resetButton.textContent = '';
-// resetButton.addEventListener('click', function() {
-//   input.value = '';
-//   preview.style.backgroundImage = '';
-//   imageUpload.classList.remove('has-image');
-//   toggleLabel();
-// });
-// imageUpload.appendChild(resetButton);
-
 imageUpload.addEventListener('drop', function(event) {
   event.preventDefault();
   event.stopPropagation();
@@ -92,4 +78,16 @@ imageUpload.addEventListener('drop', function(event) {
 
   // Prevent the default behavior of opening the file in a new tab
   event.dataTransfer.clearData();
+});
+
+//scan efect script
+const scanButton = document.getElementById('scan-button');
+
+const scanBeam = document.createElement('div');
+scanBeam.id = 'scan-beam';
+
+scanButton.addEventListener('click', function() {
+  if (imageUpload.classList.contains('has-image')) {
+    imageUpload.appendChild(scanBeam);
+  }
 });
