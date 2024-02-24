@@ -1,3 +1,11 @@
+
+/* 
+Author: Hemayatullah Sangin
+website:  http://hemayat.io
+GitHub:    https://github.com/imhemayatsangin
+Instagram: @hemuu404  
+*/
+
 const input = document.getElementById('image-input');
 const preview = document.getElementById('image-preview');
 const label = document.getElementById('upload-label');
