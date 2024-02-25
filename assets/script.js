@@ -10,11 +10,20 @@ const input = document.getElementById('image-input');
 const preview = document.getElementById('image-preview');
 const label = document.getElementById('upload-label');
 const imageUpload = document.getElementById('image-upload');
+const progressBar = document.getElementById('progress-bar');
+const progressText = document.getElementById('progress-text');
+const uploadProgress = document.getElementById('upload-progress');
 
 input.addEventListener('change', function() {
   const file = input.files[0];
-  const reader = new FileReader();
 
+  if (file) {
+    uploadProgress.classList.remove('hidden');
+    ProgressBarUpload(file);
+  }
+
+
+  const reader = new FileReader();
   reader.onload = function() {
     preview.style.backgroundImage = `url(${reader.result})`;
     imageUpload.classList.add('has-image');
@@ -91,3 +100,33 @@ scanButton.addEventListener('click', function() {
     imageUpload.appendChild(scanBeam);
   }
 });
+
+
+// code for image upload progress
+function ProgressBarUpload(file) {
+  const reader = new FileReader();
+  reader.onload = function() {
+    preview.style.backgroundImage = `url(${reader.result})`;
+    imageUpload.classList.add('has-image');
+    setTimeout(() => {
+      // uploadProgress.classList.add('hidden');
+     
+    }, 1000); 
+
+    // Additional code to update the progress bar during the delay
+    let progress = 0;
+    const interval = setInterval(() => {
+      progress += 10; 
+      if (progress <= 100) {
+        progressBar.value = progress;
+        progressText.textContent = `Uploading... ${progress}%`;
+      } else {
+        clearInterval(interval);
+       
+        progressText.textContent = `Image Uploaded 100% `;
+      }
+    }, 100); 
+  };
+
+  reader.readAsDataURL(file);
+}
